@@ -1,0 +1,1097 @@
+Program.Sub.ScreenSU.Start
+Gui.F_PreProc..Create
+Gui.F_PreProc..Caption("Custom Order Booking Report")
+Gui.F_PreProc..Size(5250,1800)
+Gui.F_PreProc..MinX(0)
+Gui.F_PreProc..MinY(0)
+Gui.F_PreProc..Position(0,0)
+Gui.F_PreProc..BackColor(-2147483633)
+Gui.F_PreProc..MousePointer(0)
+Gui.F_PreProc..Event(UnLoad,F_PreProc_UnLoad)
+Gui.F_PreProc..MaxButton(False)
+Gui.F_PreProc..Sizeable(False)
+Gui.F_PreProc.dtpBegDate.Create(DatePicker)
+Gui.F_PreProc.dtpBegDate.Size(1935,285)
+Gui.F_PreProc.dtpBegDate.Position(270,420)
+Gui.F_PreProc.dtpBegDate.TabStop(True)
+Gui.F_PreProc.dtpBegDate.TabIndex(1)
+Gui.F_PreProc.dtpBegDate.Event(LostFocus,dtpBegDate_LostFocus)
+Gui.F_PreProc.lblBegDate.Create(Label,"Start Date",True,1935,255,0,255,210,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.dtpEndDate.Create(DatePicker)
+Gui.F_PreProc.dtpEndDate.Size(1935,285)
+Gui.F_PreProc.dtpEndDate.Position(2955,420)
+Gui.F_PreProc.dtpEndDate.TabStop(True)
+Gui.F_PreProc.dtpEndDate.TabIndex(2)
+Gui.F_PreProc.dtpEndDate.Event(LostFocus,dtpEndDate_LostFocus)
+Gui.F_PreProc.lblEndDate.Create(Label,"End Date",True,1935,255,0,2940,210,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.lblThru.Create(Label,"thru",True,495,255,0,2385,510,True,0,"Arial",8,-2147483633,0)
+Gui.F_PreProc.cmdProcess.Create(Button)
+Gui.F_PreProc.cmdProcess.Size(1140,405)
+Gui.F_PreProc.cmdProcess.Position(330,915)
+Gui.F_PreProc.cmdProcess.Caption("Process")
+Gui.F_PreProc.cmdProcess.TabStop(True)
+Gui.F_PreProc.cmdProcess.TabIndex(3)
+Gui.F_PreProc.cmdProcess.Event(Click,cmdProcess_Click)
+Gui.F_PreProc.lblProcessing.Create(Label,"Processing...",False,1935,255,0,1635,1050,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance..Create
+Gui.F_Maintenance..Caption("Maintenance")
+Gui.F_Maintenance..Size(8220,10545)
+Gui.F_Maintenance..MinX(0)
+Gui.F_Maintenance..MinY(0)
+Gui.F_Maintenance..Position(0,0)
+Gui.F_Maintenance..BackColor(-2147483633)
+Gui.F_Maintenance..MousePointer(0)
+Gui.F_Maintenance..Event(UnLoad,F_Maintenance_UnLoad)
+Gui.F_Maintenance..MaxButton(False)
+Gui.F_Maintenance..Sizeable(False)
+Gui.F_Maintenance.gsgcPLs.Create(GsGridControl)
+Gui.F_Maintenance.gsgcPLs.Size(8100,2970)
+Gui.F_Maintenance.gsgcPLs.Position(0,975)
+Gui.F_Maintenance.gsgcPLs.TabStop(True)
+Gui.F_Maintenance.gsgcPLs.TabIndex(7)
+Gui.F_Maintenance.gsgcCustCo.Create(GsGridControl)
+Gui.F_Maintenance.gsgcCustCo.Size(4050,3195)
+Gui.F_Maintenance.gsgcCustCo.Position(0,6360)
+Gui.F_Maintenance.gsgcCustCo.TabStop(True)
+Gui.F_Maintenance.gsgcCustCo.TabIndex(14)
+Gui.F_Maintenance.gsgcCustDiv.Create(GsGridControl)
+Gui.F_Maintenance.gsgcCustDiv.Size(4050,3195)
+Gui.F_Maintenance.gsgcCustDiv.Position(4050,6360)
+Gui.F_Maintenance.gsgcCustDiv.TabStop(True)
+Gui.F_Maintenance.gsgcCustDiv.TabIndex(21)
+Gui.F_Maintenance.txtTag.Create(TextBox,"",True,3360,300,0,135,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtTag.TabStop(True)
+Gui.F_Maintenance.txtTag.TabIndex(1)
+Gui.F_Maintenance.txtTag.Event(LostFocus,txtTag_LostFocus)
+Gui.F_Maintenance.txtTag.MaxLength(50)
+Gui.F_Maintenance.lblTag.Create(Label,"Tag",True,1935,255,0,135,240,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.txtBegPL.Create(TextBox,"",True,885,300,0,3660,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtBegPL.TabStop(True)
+Gui.F_Maintenance.txtBegPL.TabIndex(2)
+Gui.F_Maintenance.txtBegPL.Event(LostFocus,txtBegPL_LostFocus)
+Gui.F_Maintenance.txtBegPL.MaxLength(2)
+Gui.F_Maintenance.txtEndPL.Create(TextBox,"",True,885,300,0,5250,450,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtEndPL.TabStop(True)
+Gui.F_Maintenance.txtEndPL.TabIndex(4)
+Gui.F_Maintenance.txtEndPL.Event(LostFocus,txtEndPL_LostFocus)
+Gui.F_Maintenance.txtEndPL.MaxLength(2)
+Gui.F_Maintenance.lblBegPL.Create(Label,"Beg. PL",True,690,255,0,3660,240,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.lblEndPL.Create(Label,"End PL",True,690,255,0,5250,240,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.cmdBegPLBRW.Create(Button)
+Gui.F_Maintenance.cmdBegPLBRW.Size(405,375)
+Gui.F_Maintenance.cmdBegPLBRW.Position(4710,405)
+Gui.F_Maintenance.cmdBegPLBRW.Caption("^")
+Gui.F_Maintenance.cmdBegPLBRW.TabStop(True)
+Gui.F_Maintenance.cmdBegPLBRW.TabIndex(3)
+Gui.F_Maintenance.cmdBegPLBRW.Event(Click,cmdBegPLBRW_Click)
+Gui.F_Maintenance.cmdEndPLBRW.Create(Button)
+Gui.F_Maintenance.cmdEndPLBRW.Size(405,375)
+Gui.F_Maintenance.cmdEndPLBRW.Position(6285,405)
+Gui.F_Maintenance.cmdEndPLBRW.TabStop(True)
+Gui.F_Maintenance.cmdEndPLBRW.TabIndex(5)
+Gui.F_Maintenance.cmdEndPLBRW.Caption("^")
+Gui.F_Maintenance.cmdEndPLBRW.Event(Click,cmdEndPLBRW_Click)
+Gui.F_Maintenance.cmdAddTag.Create(Button)
+Gui.F_Maintenance.cmdAddTag.Size(1020,375)
+Gui.F_Maintenance.cmdAddTag.Position(6930,405)
+Gui.F_Maintenance.cmdAddTag.Caption("Add")
+Gui.F_Maintenance.cmdAddTag.Event(Click,cmdAddTag_Click)
+Gui.F_Maintenance.cmdAddTag.TabStop(True)
+Gui.F_Maintenance.cmdAddTag.TabIndex(6)
+Gui.F_Maintenance.cmdDelTag.Create(Button)
+Gui.F_Maintenance.cmdDelTag.Size(1020,375)
+Gui.F_Maintenance.cmdDelTag.Position(6930,4110)
+Gui.F_Maintenance.cmdDelTag.Caption("Delete")
+Gui.F_Maintenance.cmdDelTag.Event(Click,cmdDelTag_Click)
+Gui.F_Maintenance.cmdDelTag.TabStop(True)
+Gui.F_Maintenance.cmdDelTag.TabIndex(8)
+Gui.F_Maintenance.cmdAddCo.Create(Button)
+Gui.F_Maintenance.cmdAddCo.Size(1020,375)
+Gui.F_Maintenance.cmdAddCo.Position(2895,5790)
+Gui.F_Maintenance.cmdAddCo.TabStop(True)
+Gui.F_Maintenance.cmdAddCo.TabIndex(13)
+Gui.F_Maintenance.cmdAddCo.Caption("Add")
+Gui.F_Maintenance.cmdAddCo.Event(Click,cmdAddCo_Click)
+Gui.F_Maintenance.cmdDelCo.Create(Button)
+Gui.F_Maintenance.cmdDelCo.Size(1020,375)
+Gui.F_Maintenance.cmdDelCo.Position(2895,9735)
+Gui.F_Maintenance.cmdDelCo.TabStop(True)
+Gui.F_Maintenance.cmdDelCo.TabIndex(15)
+Gui.F_Maintenance.cmdDelCo.Caption("Delete")
+Gui.F_Maintenance.cmdDelCo.Event(Click,cmdDelCo_Click)
+Gui.F_Maintenance.cmdAddDiv.Create(Button)
+Gui.F_Maintenance.cmdAddDiv.Size(1020,375)
+Gui.F_Maintenance.cmdAddDiv.Position(6930,5790)
+Gui.F_Maintenance.cmdAddDiv.TabStop(True)
+Gui.F_Maintenance.cmdAddDiv.TabIndex(20)
+Gui.F_Maintenance.cmdAddDiv.Caption("Add")
+Gui.F_Maintenance.cmdAddDiv.Event(Click,cmdAddDiv_Click)
+Gui.F_Maintenance.cmdDelDiv.Create(Button)
+Gui.F_Maintenance.cmdDelDiv.Size(1020,375)
+Gui.F_Maintenance.cmdDelDiv.Position(6930,9735)
+Gui.F_Maintenance.cmdDelDiv.TabStop(True)
+Gui.F_Maintenance.cmdDelDiv.TabIndex(22)
+Gui.F_Maintenance.cmdDelDiv.Caption("Delete")
+Gui.F_Maintenance.cmdDelDiv.Event(Click,cmdDelDiv_Click)
+Gui.F_Maintenance.txtCustCo.Create(TextBox,"",True,1935,300,0,135,5835,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtCustCo.TabStop(True)
+Gui.F_Maintenance.txtCustCo.TabIndex(11)
+Gui.F_Maintenance.txtCustCo.MaxLength(6)
+Gui.F_Maintenance.txtCustCo.Event(LostFocus,txtCustCo_LostFocus)
+Gui.F_Maintenance.lblCustCo.Create(Label,"Customer Beg.",True,1935,255,0,135,5625,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.txtCustDiv.Create(TextBox,"",True,1935,300,0,4155,5835,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtCustDiv.TabStop(True)
+Gui.F_Maintenance.txtCustDiv.TabIndex(18)
+Gui.F_Maintenance.txtCustDiv.MaxLength(6)
+Gui.F_Maintenance.txtCustDiv.Event(LostFocus,txtCustDiv_LostFocus)
+Gui.F_Maintenance.lblCustDiv.Create(Label,"Customer Beg.",True,1935,255,0,4155,5625,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.cmdCustCoBRW.Create(Button)
+Gui.F_Maintenance.cmdCustCoBRW.Size(405,375)
+Gui.F_Maintenance.cmdCustCoBRW.Position(2325,5790)
+Gui.F_Maintenance.cmdCustCoBRW.TabStop(True)
+Gui.F_Maintenance.cmdCustCoBRW.TabIndex(12)
+Gui.F_Maintenance.cmdCustCoBRW.Caption("^")
+Gui.F_Maintenance.cmdCustCoBRW.Event(Click,cmdCustCoBRW_Click)
+Gui.F_Maintenance.cmdCustDivBRW.Create(Button)
+Gui.F_Maintenance.cmdCustDivBRW.Size(405,375)
+Gui.F_Maintenance.cmdCustDivBRW.Position(6345,5790)
+Gui.F_Maintenance.cmdCustDivBRW.TabStop(True)
+Gui.F_Maintenance.cmdCustDivBRW.TabIndex(19)
+Gui.F_Maintenance.cmdCustDivBRW.Caption("^")
+Gui.F_Maintenance.cmdCustDivBRW.Event(Click,cmdCustDivBRW_Click)
+Gui.F_Maintenance.cmdSave.Create(Button)
+Gui.F_Maintenance.cmdSave.Size(1020,375)
+Gui.F_Maintenance.cmdSave.Position(135,9735)
+Gui.F_Maintenance.cmdSave.TabStop(True)
+Gui.F_Maintenance.cmdSave.TabIndex(23)
+Gui.F_Maintenance.cmdSave.Caption("Save")
+Gui.F_Maintenance.cmdSave.Event(Click,cmdSave_Click)
+Gui.F_Maintenance.lblCustCo2.Create(Label,"Customer End",True,1935,255,0,135,5040,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.txtCustCo2.Create(TextBox,"",True,1935,300,0,135,5250,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtCustCo2.TabStop(True)
+Gui.F_Maintenance.txtCustCo2.TabIndex(9)
+Gui.F_Maintenance.txtCustCo2.MaxLength(6)
+Gui.F_Maintenance.txtCustCo2.Event(LostFocus,txtCustCo2_LostFocus)
+Gui.F_Maintenance.cmdCustCoBRW2.Create(Button)
+Gui.F_Maintenance.cmdCustCoBRW2.Size(405,375)
+Gui.F_Maintenance.cmdCustCoBRW2.Position(2325,5205)
+Gui.F_Maintenance.cmdCustCoBRW2.TabStop(True)
+Gui.F_Maintenance.cmdCustCoBRW2.TabIndex(10)
+Gui.F_Maintenance.cmdCustCoBRW2.Caption("^")
+Gui.F_Maintenance.cmdCustCoBRW2.Event(Click,cmdCustCoBRW2_Click)
+Gui.F_Maintenance.lblCustDiv2.Create(Label,"Customer End",True,1935,255,0,4140,5040,True,0,"Arial",8,-2147483633,0)
+Gui.F_Maintenance.txtCustDiv2.Create(TextBox,"",True,1935,300,0,4140,5250,True,0,"Arial",8,-2147483643,1)
+Gui.F_Maintenance.txtCustDiv2.TabStop(True)
+Gui.F_Maintenance.txtCustDiv2.TabIndex(16)
+Gui.F_Maintenance.txtCustDiv2.MaxLength(6)
+Gui.F_Maintenance.txtCustDiv2.Event(LostFocus,txtCustDiv2_LostFocus)
+Gui.F_Maintenance.cmdCustDivBRW2.Create(Button)
+Gui.F_Maintenance.cmdCustDivBRW2.Size(405,375)
+Gui.F_Maintenance.cmdCustDivBRW2.Position(6345,5205)
+Gui.F_Maintenance.cmdCustDivBRW2.TabStop(True)
+Gui.F_Maintenance.cmdCustDivBRW2.TabIndex(17)
+Gui.F_Maintenance.cmdCustDivBRW2.Caption("^")
+Gui.F_Maintenance.cmdCustDivBRW2.Event(Click,cmdCustDivBRW2_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+'Author: Bix
+'Date: 1/25/19
+'Company: Rotork Fairchild
+'File: GCG_5328_Custom_Order_Booking_RPT.g2u
+'Replicates order booking excel spread sheet by singling out PLs and orders over $10K
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Caller.Switches,=,"M")
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.Data.DataTable.CreateFromSQL("dtGCG_5328_PL_TAGS","con","select TAG, BEG_PL, END_PL from GCG_5328_PL_TAGS order by BEG_PL, END_PL;",True)
+	F.Data.DataTable.CreateFromSQL("dtGCG_5328_CO_CODES","con","select CUST1, CUST2 from GCG_5328_CO_CODES order by CUST1, CUST2;",True)
+	F.Data.DataTable.CreateFromSQL("dtGCG_5328_DIV_CODES","con","select CUST1, CUST2 from GCG_5328_DIV_CODES order by CUST1, CUST2;",True)
+	F.ODBC.Connection!con.Close
+	
+	Gui.F_Maintenance.gsgcPLs.AddGridviewFromDatatable("gvPLTags","dtGCG_5328_PL_TAGS")
+	Gui.F_Maintenance.gsgcCustCo.AddGridviewFromDatatable("gvCo","dtGCG_5328_CO_CODES")
+	Gui.F_Maintenance.gsgcCustDiv.AddGridviewFromDatatable("gvDiv","dtGCG_5328_DIV_CODES")
+	Gui.F_Maintenance.gsgcPLs.SetGridviewProperty("gvPLTags","Editable",False)
+	Gui.F_Maintenance.gsgcPLs.SetColumnProperty("gvPLTags","TAG","Caption","Tag")
+	Gui.F_Maintenance.gsgcPLs.SetColumnProperty("gvPLTags","BEG_PL","Caption","Beginning PL")
+	Gui.F_Maintenance.gsgcPLs.SetColumnProperty("gvPLTags","END_PL","Caption","End PL")
+	Gui.F_Maintenance.gsgcPLs.SetColumnProperty("gvPLTags","TAG","AllowFocus",False)
+	Gui.F_Maintenance.gsgcPLs.SetColumnProperty("gvPLTags","BEG_PL","AllowFocus",False)
+	Gui.F_Maintenance.gsgcPLs.SetColumnProperty("gvPLTags","END_PL","AllowFocus",False)
+	Gui.F_Maintenance.gsgcCustCo.SetGridviewProperty("gvCo","Editable",False)
+	Gui.F_Maintenance.gsgcCustCo.SetColumnProperty("gvCo","CUST1","Caption","Inter-Co Rotork")
+	Gui.F_Maintenance.gsgcCustCo.SetColumnProperty("gvCo","CUST2","Caption","Range End")
+	Gui.F_Maintenance.gsgcCustCo.SetColumnProperty("gvCo","CUST1","AllowFocus",False)
+	Gui.F_Maintenance.gsgcCustCo.SetColumnProperty("gvCo","CUST2","AllowFocus",False)
+	Gui.F_Maintenance.gsgcCustDiv.SetGridviewProperty("gvDiv","Editable",False)
+	Gui.F_Maintenance.gsgcCustDiv.SetColumnProperty("gvDiv","CUST1","Caption","Inter-Divisional")
+	Gui.F_Maintenance.gsgcCustDiv.SetColumnProperty("gvDiv","CUST2","Caption","Range End")
+	Gui.F_Maintenance.gsgcCustDiv.SetColumnProperty("gvDiv","CUST1","AllowFocus",False)
+	Gui.F_Maintenance.gsgcCustDiv.SetColumnProperty("gvDiv","CUST2","AllowFocus",False)
+	Gui.F_Maintenance.gsgcPLs.MainView("gvPLTags")
+	Gui.F_Maintenance.gsgcCustCo.MainView("gvCo")
+	Gui.F_Maintenance.gsgcCustDiv.MainView("gvDiv")
+	
+	Gui.F_Maintenance..Show
+F.Intrinsic.Control.Else
+	Gui.F_PreProc.dtpBegDate.Value(V.Ambient.Date)
+	Gui.F_PreProc.dtpEndDate.Value(V.Ambient.Date)
+	Gui.F_PreProc..Show
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}{1}Hook: {6}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Caller.Hook,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_PreProc_UnLoad.Start
+'Close screen and end program
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+Gui.F_PreProc..Visible(False)
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}{1}Hook: {6}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Caller.Hook,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_PreProc_UnLoad.End
+
+Program.Sub.dtpBegDate_LostFocus.Start
+'make sure that end date and beginning date are not 
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!dtpBegDate.Value,>,V.Screen.F_PreProc!dtpEndDate.Value)
+	Gui.F_PreProc.dtpBegDate.Value(V.Screen.F_PreProc!dtpEndDate.Value)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}{1}Hook: {6}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Caller.Hook,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_PreProc_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.dtpBegDate_LostFocus.End
+
+Program.Sub.dtpEndDate_LostFocus.Start
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_PreProc!dtpEndDate.Value,<,V.Screen.F_PreProc!dtpBegDate.Value)
+	Gui.F_PreProc.dtpEndDate.Value(V.Screen.F_PreProc!dtpBegDate.Value)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}{1}Hook: {6}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Caller.Hook,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_PreProc_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.dtpEndDate_LostFocus.End
+
+Program.Sub.cmdProcess_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sTotalCats.Declare(String)
+V.Local.sInterCo.Declare(String)
+V.Local.sInterDiv.Declare(String)
+V.Local.sCusts.Declare(String)
+V.Local.sOrders.Declare(String)
+V.Local.sOrder.Declare(String)
+V.Local.sFilter.Declare(String)
+V.Local.s10KCust.Declare(String)
+V.Local.iCust.Declare(Long)
+V.Local.iOrder.Declare(Long)
+V.Local.iOrderHist.Declare(Long)
+V.Local.iDtRow.Declare(Long,0)
+V.Local.iRptID.Declare(Long)
+V.Local.iCnt.Declare(Long)
+V.Local.dBegDate.Declare(Date)
+V.Local.dEndDate.Declare(Date)
+V.Local.fDollarTotals.Declare(Float)
+V.Local.fInterCoTotal.Declare(Float)
+V.Local.fInterDivTotal.Declare(Float)
+V.Local.fInterTotal.Declare(Float)
+V.Local.fCustTotal.Declare(Float)
+V.Local.f10KTotal.Declare(Float)
+V.Local.sParams.Declare(String)
+V.Local.sValues.Declare(String)
+V.Local.sOrderDel.Declare(String)
+V.Local.sOrderChg.Declare(String)
+V.Local.dDateTimeDel.Declare(Date)
+V.Local.dDateTimePost.Declare(Date)
+V.Local.sRowDels.Declare(String)
+F.Intrinsic.Control.Try
+
+Gui.F_PreProc..Enabled(False)
+Gui.F_PreProc.lblProcessing.Visible(True)
+V.Local.dBegDate.Set(V.Screen.F_PreProc!dtpBegDate.Value)
+V.Local.dEndDate.Set(V.Screen.F_PreProc!dtpEndDate.Value)
+
+F.Intrinsic.Control.CallSub(GetPreProcDTs,"BegDate",V.Local.dBegDate,"EndDate",V.Local.dEndDate)
+
+F.Intrinsic.Control.If(V.DataTable.dtBooking.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("No orders were found on the provided booking date(s)")
+	F.Data.DataTable.Close("dtBooking")
+	F.Data.DataTable.Close("dtGCG_5328_BI_RPT")
+	F.Data.DataTable.Close("dtOrderHist")
+	F.Data.DataTable.Close("dtGCG_5328_PL_TAGS")
+	F.Data.DataTable.Close("dtGCG_5328_CO_CODES")
+	F.Data.DataTable.Close("dtGCG_5328_DIV_CODES")
+	Gui.F_PreProc..Enabled(True)
+	Gui.F_PreProc.lblProcessing.Visible(False)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_PL_TAGS.RowCount,>,0)
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.dtGCG_5328_PL_TAGS.RowCount--,1)
+		F.Intrinsic.String.Build("{0} Total:",V.DataTable.dtGCG_5328_PL_TAGS(V.Local.iCnt).TAG!FieldValTrim,V.Local.sTotalCats)
+		F.Intrinsic.String.Build("PL >= '{0}' and PL <= '{1}'",V.DataTable.dtGCG_5328_PL_TAGS(V.Local.iCnt).BEG_PL!FieldValTrim,V.DataTable.dtGCG_5328_PL_TAGS(V.Local.iCnt).END_PL!FieldValTrim,V.Local.sFilter)
+		F.Data.DataTable.Compute("dtBooking","SUM(TOTAL_DOLLARS)",V.Local.sFilter,V.Local.fDollarTotals)
+		F.Data.DataTable.AddRow("dtGCG_5328_BI_RPT","TERMINAL",V.Caller.Terminal,"SEQ",V.Local.iDtRow,"LINE_ID","PL","LEFT_STRING",V.Local.sTotalCats,"RIGHT_FLOAT",V.Local.fDollarTotals)
+		F.Intrinsic.Math.Add(V.Local.iDtRow,1,V.Local.iDtRow)
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+F.Intrinsic.Control.EndIf
+
+'Get inter companies/divisions bookings
+F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_CO_CODES.RowCount,>,0)
+	F.Data.DataView.Create("dtGCG_5328_CO_CODES","dv",22)
+	F.Data.DataView.ToString("dtGCG_5328_CO_CODES","dv","*!*","#$#",V.Local.sInterCo)
+	F.Data.DataView.Close("dtGCG_5328_CO_CODES","dv")
+	F.Intrinsic.String.Replace(V.Local.sInterCo,"*!*","' and CUSTOMER <= '",V.Local.sInterCo)
+	F.Intrinsic.String.Replace(V.Local.sInterCo,"#$#","') or (CUSTOMER >= '",V.Local.sInterCo)
+	F.Intrinsic.String.Build("(CUSTOMER >= '{0}')",V.Local.sInterCo,V.Local.sInterCo)
+	F.Data.DataTable.Compute("dtBooking","SUM(TOTAL_DOLLARS)",V.Local.sInterCo,V.Local.fInterCoTotal)
+	F.Data.DataTable.AddRow("dtGCG_5328_BI_RPT","TERMINAL",V.Caller.Terminal,"SEQ",V.Local.iDtRow,"LINE_ID","INTER","LEFT_STRING","Inter-Co Rotork Placed on FIPC:","RIGHT_FLOAT",V.Local.fInterCoTotal)
+	F.Intrinsic.Math.Add(V.Local.iDtRow,1,V.Local.iDtRow)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_DIV_CODES.RowCount,>,0)
+	F.Data.DataView.Create("dtGCG_5328_DIV_CODES","dv",22)
+	F.Data.DataView.ToString("dtGCG_5328_DIV_CODES","dv","*!*","#$#",V.Local.sInterDiv)
+	F.Data.DataView.Close("dtGCG_5328_DIV_CODES","dv")
+	F.Intrinsic.String.Replace(V.Local.sInterDiv,"*!*","' and CUSTOMER <= '",V.Local.sInterDiv)
+	F.Intrinsic.String.Replace(V.Local.sInterDiv,"#$#","') or (CUSTOMER >= '",V.Local.sInterDiv)
+	F.Intrinsic.String.Build("(CUSTOMER >= '{0}')",V.Local.sInterDiv,V.Local.sInterDiv)
+	F.Data.DataTable.Compute("dtBooking","SUM(TOTAL_DOLLARS)",V.Local.sInterDiv,V.Local.fInterDivTotal)
+	F.Data.DataTable.AddRow("dtGCG_5328_BI_RPT","TERMINAL",V.Caller.Terminal,"SEQ",V.Local.iDtRow,"LINE_ID","INTER","LEFT_STRING","Inter-Divisional Placed on FIPC:","RIGHT_FLOAT",V.Local.fInterDivTotal)
+	F.Intrinsic.Math.Add(V.Local.iDtRow,1,V.Local.iDtRow)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataView.Create("dtOrderHist","dv",22)
+F.Data.DataView.Create("dtBooking","dvOver10K",22)
+'Get list of unique customers that were booked in the date range
+F.Data.DataView.ToString("dtBooking","dvOver10K","CUSTOMER","*!*","#$#",V.Local.sCusts)
+F.Intrinsic.String.Split(V.Local.sCusts,"#$#",V.Local.sCusts)
+F.Intrinsic.String.RemoveArrayDuplicates(V.Local.sCusts,V.Local.sCusts)
+'------
+F.Intrinsic.Control.For(V.Local.iCust,0,V.Local.sCusts.UBound,1)
+	'Look for ending values > $10K
+	F.Intrinsic.String.Build("CUSTOMER = '{0}'",V.Local.sCusts(V.Local.iCust),V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtBooking","dvOver10K",V.Local.sFilter)
+	F.Data.DataView.SetSort("dtBooking","dvOver10K","ORDER_NO ASC, ORDER_LINE ASC, YEAR DESC, MONTH DESC, DAY DESC, HOUR DESC, MINUTE DESC, SECOND DESC")
+	V.Local.f10KTotal.Set(0)
+	F.Intrinsic.Control.For(V.Local.iOrder,0,V.DataView.dtBooking!dvOver10K.RowCount--,1)
+		'add change/total/delete amount to cum amount
+		F.Intrinsic.Math.Add(V.Local.f10KTotal,V.DataView.dtBooking!dvOver10K(V.Local.iOrder).TOTAL_DOLLARS!FieldVal,V.Local.f10KTotal)
+	F.Intrinsic.Control.Next(V.Local.iOrder)
+	F.Intrinsic.Control.If(V.Local.f10KTotal,>=,10000)
+		'If customer's sub total is over $10K, add it to the DT
+		F.Intrinsic.String.Build("{0}",V.Local.sCusts(V.Local.iCust),V.Local.sFilter)
+		F.Data.DataTable.AddRow("dtGCG_5328_BI_RPT","TERMINAL",V.Caller.Terminal,"SEQ",V.Local.iDtRow,"LINE_ID","CUST","LEFT_STRING",V.Local.sFilter,"RIGHT_FLOAT",V.Local.f10KTotal)
+		F.Intrinsic.Math.Add(V.Local.iDtRow,1,V.Local.iDtRow)
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.SetSort("dtBooking","dvOver10K",)
+	'------
+	'Look for RedTag Customers
+	F.Intrinsic.String.Build("CUSTOMER = '{0}' and STATUS = 'Added'",V.Local.sCusts(V.Local.iCust),V.Local.sFilter)
+	F.Data.DataView.SetFilter("dtBooking","dvOver10K",V.Local.sFilter)
+	V.Local.fCustTotal.Set(0)
+	F.Intrinsic.Control.For(V.Local.iOrder,0,V.DataView.dtBooking!dvOver10K.RowCount--,1)
+		'search order history for orders that were invoiced on the same day they as their booking date
+		F.Intrinsic.String.Build("ORDER_NO = '{0}' and ORDER_LINE = '{1}' and YEAR = '{2}' and MONTH = '{3}' and DAY = '{4}'",V.DataView.dtBooking!dvOver10K(V.Local.iOrder).ORDER_NO!FieldVal,V.DataView.dtBooking!dvOver10K(V.Local.iOrder).ORDER_LINE!FieldVal,V.DataView.dtBooking!dvOver10K(V.Local.iOrder).YEAR!FieldVal,V.DataView.dtBooking!dvOver10K(V.Local.iOrder).MONTH!FieldVal,V.DataView.dtBooking!dvOver10K(V.Local.iOrder).DAY!FieldVal,V.Local.sFilter)
+		F.Data.DataView.SetFilter("dtOrderHist","dv",V.Local.sFilter)
+		F.Intrinsic.Control.If(V.DataView.dtOrderHist!dv.RowCount,>,0)
+			F.Intrinsic.Control.For(V.Local.iOrderHist,0,V.DataView.dtOrderHist!dv.RowCount--,1)
+				F.Intrinsic.Math.Add(V.Local.fCustTotal,V.DataView.dtOrderHist!dv(V.Local.iOrderHist).EXTENSION!FieldVal,V.Local.fCustTotal)
+			F.Intrinsic.Control.Next(V.Local.iOrderHist)
+		F.Intrinsic.Control.EndIf
+		'------
+	F.Intrinsic.Control.Next(V.Local.iOrder)
+	F.Intrinsic.Control.If(V.Local.fCustTotal,!=,0)
+		'if any orders were found for this customer, write it to the DT
+		F.Intrinsic.Control.CallSub(GetCustomerName,"Customer",V.Local.sCusts(V.Local.iCust))
+		F.Data.DataTable.AddRow("dtGCG_5328_BI_RPT","TERMINAL",V.Caller.Terminal,"SEQ",V.Local.iDtRow,"LINE_ID","RED_CUST","LEFT_STRING",V.Args.Customer_Name,"RIGHT_FLOAT",V.Local.fCustTotal)
+		F.Intrinsic.Math.Add(V.Local.iDtRow,1,V.Local.iDtRow)
+		'------
+	F.Intrinsic.Control.EndIf
+	'------
+F.Intrinsic.Control.Next(V.Local.iCust)
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.Data.DataTable.SaveToDB("dtGCG_5328_BI_RPT","con","GCG_5328_BI_RPT","TERMINAL*!*SEQ",7)
+F.ODBC.Connection!con.Close
+
+F.Data.DataTable.Close("dtBooking")
+F.Data.DataTable.Close("dtGCG_5328_BI_RPT")
+F.Data.DataTable.Close("dtOrderHist")
+F.Data.DataTable.Close("dtGCG_5328_PL_TAGS")
+F.Data.DataTable.Close("dtGCG_5328_CO_CODES")
+F.Data.DataTable.Close("dtGCG_5328_DIV_CODES")
+
+Gui.F_PreProc..Visible(False)
+
+'Open report
+F.Global.BI.GetIDFromName("GCG_5328_ORD_BOOKING.RPT",V.Local.iRptID)
+F.Intrinsic.String.Split("BegDate*!*EndDate*!*Terminal","*!*",V.Local.sParams)
+F.Intrinsic.String.Build("{0}*!*{1}*!*{2}",V.Local.dBegDate,V.Local.dEndDate,V.Caller.Terminal,V.Local.sValues)
+F.Intrinsic.String.Split(V.Local.sValues,"*!*",V.Local.sValues)
+F.Global.BI.PrintReport(V.Local.iRptID,0,V.Local.sParams,V.Local.sValues,False)
+
+F.Intrinsic.Control.CallSub(F_PreProc_UnLoad)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,21025)
+		'Error is a timeout issue, increase timeout and try again
+		F.Intrinsic.Math.Add(V.Local.iTimeout,100,V.Local.iTimeout)
+		F.Intrinsic.Control.GoTo("Timeout Reset")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}{1}Hook: {6}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Caller.Hook,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_PreProc_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdProcess_Click.End
+
+Program.Sub.F_Maintenance_UnLoad.Start
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Data.DataTable.Close("dtGCG_5328_PL_TAGS")
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Maintenance_UnLoad.End
+
+Program.Sub.txtTag_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sText.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtTag.Text,V.Local.sText)
+Gui.F_Maintenance.txtTag.Text(V.Local.sText.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtTag_LostFocus.End
+
+Program.Sub.txtBegPL_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sPL.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtBegPL.Text,V.Local.sPL)
+F.Intrinsic.Control.If(V.Local.sPL.Trim,!=,"")
+	F.Intrinsic.String.Build("select distinct PRODUCT_LINE from PRODUCT_LINE where upper(PRODUCT_LINE) = '{0}';",V.Local.sPL,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.OpenRecordsetRO("rstPL",V.Local.sSQL)
+	F.Intrinsic.Control.if(V.ODBC.con!rstPL.EOF)
+		'No PL found
+		F.Intrinsic.UI.Msgbox("PL could not be found")
+		V.Local.sPL.Set("")
+		Gui.F_Maintenance.txtBegPL.SetFocus
+	F.Intrinsic.Control.Else
+		V.Local.sPL.Set(V.ODBC.con!rstPL.FieldValTrim!PRODUCT_LINE)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstPL.Close
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Maintenance.txtBegPL.Text(V.Local.sPL.Trim)
+F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtEndPL.Text.Trim,=,"")
+	Gui.F_Maintenance.txtEndPL.Text(V.Local.sPL.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtBegPL_LostFocus.End
+
+Program.Sub.txtEndPL_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sPL.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtEndPL.Text,V.Local.sPL)
+F.Intrinsic.Control.If(V.Local.sPL.Trim,!=,"")
+	F.Intrinsic.String.Build("select distinct PRODUCT_LINE from PRODUCT_LINE where upper(PRODUCT_LINE) = '{0}';",V.Local.sPL,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.OpenRecordsetRO("rstPL",V.Local.sSQL)
+	F.Intrinsic.Control.if(V.ODBC.con!rstPL.EOF)
+		'No PL found
+		F.Intrinsic.UI.Msgbox("PL could not be found")
+		V.Local.sPL.Set("")
+		Gui.F_Maintenance.txtEndPL.SetFocus
+	F.Intrinsic.Control.Else
+		V.Local.sPL.Set(V.ODBC.con!rstPL.FieldValTrim!PRODUCT_LINE)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstPL.Close
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Maintenance.txtEndPL.Text(V.Local.sPL.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtEndPL_LostFocus.End
+
+Program.Sub.cmdBegPLBRW_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.UI.Browser(130,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,0)
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	Gui.F_Maintenance.txtBegPL.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtEndPL.Text.Trim,=,"")
+		Gui.F_Maintenance.txtEndPL.Text(V.Local.sRet.Trim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBegPLBRW_Click.End
+
+Program.Sub.cmdEndPLBRW_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.UI.Browser(130,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,0)
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	Gui.F_Maintenance.txtEndPL.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdEndPLBRW_Click.End
+
+Program.Sub.cmdAddTag_Click.Start
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtTag.Text.Trim,!=,"","AND",V.Screen.F_Maintenance!txtBegPL.Text.Trim,!=,"",V.Screen.F_Maintenance!txtEndPL.Text.Trim,!=,"")
+	F.Data.DataTable.AddRow("dtGCG_5328_PL_TAGS","TAG",V.Screen.F_Maintenance!txtTag.Text.Trim,"BEG_PL",V.Screen.F_Maintenance!txtBegPL.Text.Trim,"END_PL",V.Screen.F_Maintenance!txtEndPL.Text.Trim)
+	Gui.F_Maintenance.txtTag.Text("")
+	Gui.F_Maintenance.txtBegPL.Text("")
+	Gui.F_Maintenance.txtEndPL.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Please fill out the fields")
+	F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtTag.Text.Trim,=,"")
+		Gui.F_Maintenance.txtTag.SetFocus
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Maintenance!txtBegPL.Text.Trim,=,"")
+		Gui.F_Maintenance.txtBegPL.SetFocus
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Maintenance!txtEndPL.Text.Trim,=,"")
+		Gui.F_Maintenance.txtEndPL.SetFocus
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddTag_Click.End
+
+Program.Sub.cmdDelTag_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRows.Declare(String)
+V.Local.iRow.Declare(Long)
+F.Intrinsic.Control.Try
+
+Gui.F_Maintenance.gsgcPLs.GetSelectedRows("gvPLTags",V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows,!=,"")
+	F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.Intrinsic.Control.For(V.Local.iRow,0,V.Local.sRows.UBound,1)
+		F.Data.DataTable.DeleteRow("dtGCG_5328_PL_TAGS",V.Local.sRows(V.Local.iRow))
+	F.Intrinsic.Control.Next(V.Local.iRow)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDelTag_Click.End
+
+Program.Sub.txtCustCo_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sCust.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtCustCo.Text,V.Local.sCust)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,!=,"")
+	F.Intrinsic.String.Build("select distinct CUSTOMER from CUSTOMER_MASTER where upper(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.OpenRecordsetRO("rstCust",V.Local.sSQL)
+	F.Intrinsic.Control.if(V.ODBC.con!rstCust.EOF)
+		'No Cust found
+		F.Intrinsic.UI.Msgbox("Customer could not be found")
+		V.Local.sCust.Set("")
+		Gui.F_Maintenance.txtCustCo.SetFocus
+	F.Intrinsic.Control.Else
+		V.Local.sCust.Set(V.ODBC.con!rstCust.FieldValTrim!CUSTOMER)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstCust.Close
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Maintenance.txtCustCo.Text(V.Local.sCust.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustCo_LostFocus.End
+
+Program.Sub.txtCustDiv_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sCust.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtCustDiv.Text,V.Local.sCust)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,!=,"")
+	F.Intrinsic.String.Build("select distinct CUSTOMER from CUSTOMER_MASTER where upper(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.OpenRecordsetRO("rstCust",V.Local.sSQL)
+	F.Intrinsic.Control.if(V.ODBC.con!rstCust.EOF)
+		'No Cust found
+		F.Intrinsic.UI.Msgbox("Customer could not be found")
+		V.Local.sCust.Set("")
+		Gui.F_Maintenance.txtCustDiv.SetFocus
+	F.Intrinsic.Control.Else
+		V.Local.sCust.Set(V.ODBC.con!rstCust.FieldValTrim!CUSTOMER)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstCust.Close
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Maintenance.txtCustDiv.Text(V.Local.sCust.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustDiv_LostFocus.End
+
+Program.Sub.cmdCustCoBRW_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.UI.Browser(205,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,0)
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	Gui.F_Maintenance.txtCustCo.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustCoBRW_Click.End
+
+Program.Sub.cmdCustDivBRW_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.UI.Browser(205,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,0)
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	Gui.F_Maintenance.txtCustDiv.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustDivBRW_Click.End
+
+Program.Sub.cmdAddCo_Click.Start
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtCustCo.Text.Trim,!=,"","AND",V.Screen.F_Maintenance!txtCustCo2.Text.Trim,!=,"")
+	F.Data.DataTable.AddRow("dtGCG_5328_CO_CODES","CUST1",V.Screen.F_Maintenance!txtCustCo.Text.Trim,"CUST2",V.Screen.F_Maintenance!txtCustCo.Text.Trim)
+	Gui.F_Maintenance.txtCustCo.Text("")
+	Gui.F_Maintenance.txtCustCo2.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Please fill out the fields")
+	F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtCustCo.Text.Trim,=,"")
+		Gui.F_Maintenance.txtCustCo.SetFocus
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Maintenance!txtCustCo2.Text.Trim,=,"")
+		Gui.F_Maintenance.txtCustCo2.SetFocus
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddCo_Click.End
+
+Program.Sub.cmdAddDiv_Click.Start
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtCustDiv.Text.Trim,!=,"","AND",V.Screen.F_Maintenance!txtCustDiv2.Text.Trim,!=,"")
+	F.Data.DataTable.AddRow("dtGCG_5328_DIV_CODES","CUST1",V.Screen.F_Maintenance!txtCustDiv.Text.Trim,"CUST2",V.Screen.F_Maintenance!txtCustDiv2.Text.Trim)
+	Gui.F_Maintenance.txtCustDiv.Text("")
+	Gui.F_Maintenance.txtCustDiv2.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.UI.Msgbox("Please fill out the fields")
+	F.Intrinsic.Control.If(V.Screen.F_Maintenance!txtCustDiv.Text.Trim,=,"")
+		Gui.F_Maintenance.txtCustDiv.SetFocus
+	F.Intrinsic.Control.ElseIf(V.Screen.F_Maintenance!txtCustDiv2.Text.Trim,=,"")
+		Gui.F_Maintenance.txtCustDiv2.SetFocus
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdAddDiv_Click.End
+
+Program.Sub.cmdDelCo_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRows.Declare(String)
+V.Local.iRow.Declare(Long)
+F.Intrinsic.Control.Try
+
+Gui.F_Maintenance.gsgcCustCo.GetSelectedRows("gvCo",V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows,!=,"")
+	F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.Intrinsic.Control.For(V.Local.iRow,0,V.Local.sRows.UBound,1)
+		F.Data.DataTable.DeleteRow("dtGCG_5328_CO_CODES",V.Local.sRows(V.Local.iRow))
+	F.Intrinsic.Control.Next(V.Local.iRow)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDelCo_Click.End
+
+Program.Sub.cmdDelDiv_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRows.Declare(String)
+V.Local.iRow.Declare(Long)
+F.Intrinsic.Control.Try
+
+Gui.F_Maintenance.gsgcCustDiv.GetSelectedRows("gvDiv",V.Local.sRows)
+F.Intrinsic.Control.If(V.Local.sRows,!=,"")
+	F.Intrinsic.String.Split(V.Local.sRows,"*!*",V.Local.sRows)
+	F.Intrinsic.Control.For(V.Local.iRow,0,V.Local.sRows.UBound,1)
+		F.Data.DataTable.DeleteRow("dtGCG_5328_DIV_CODES",V.Local.sRows(V.Local.iRow))
+	F.Intrinsic.Control.Next(V.Local.iRow)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdDelDiv_Click.End
+
+Program.Sub.cmdSave_Click.Start
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection
+F.ODBC.Connection!con.Execute("delete from GCG_5328_PL_TAGS;")
+F.ODBC.Connection!con.Execute("delete from GCG_5328_CO_CODES;")
+F.ODBC.Connection!con.Execute("delete from GCG_5328_DIV_CODES;")
+F.Data.DataTable.SaveToDB("dtGCG_5328_PL_TAGS","con","GCG_5328_PL_TAGS",,128)
+F.Data.DataTable.SaveToDB("dtGCG_5328_CO_CODES","con","GCG_5328_CO_CODES",,128)
+F.Data.DataTable.SaveToDB("dtGCG_5328_DIV_CODES","con","GCG_5328_DIV_CODES",,128)
+F.ODBC.Connection!con.Close
+
+F.Data.DataTable.AcceptChanges("dtGCG_5328_PL_TAGS")
+F.Data.DataTable.AcceptChanges("dtGCG_5328_CO_CODES")
+F.Data.DataTable.AcceptChanges("dtGCG_5328_DIV_CODES")
+
+F.Intrinsic.UI.Msgbox("Saved!")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSave_Click.End
+
+Program.Sub.txtCustCo2_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sCust.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtCustCo2.Text,V.Local.sCust)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,!=,"")
+	F.Intrinsic.String.Build("select distinct CUSTOMER from CUSTOMER_MASTER where upper(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.OpenRecordsetRO("rstCust",V.Local.sSQL)
+	F.Intrinsic.Control.if(V.ODBC.con!rstCust.EOF)
+		'No Cust found
+		F.Intrinsic.UI.Msgbox("Customer could not be found")
+		V.Local.sCust.Set("")
+		Gui.F_Maintenance.txtCustCo2.SetFocus
+	F.Intrinsic.Control.Else
+		V.Local.sCust.Set(V.ODBC.con!rstCust.FieldValTrim!CUSTOMER)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstCust.Close
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Maintenance.txtCustCo2.Text(V.Local.sCust.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustCo2_LostFocus.End
+
+Program.Sub.txtCustDiv2_LostFocus.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sCust.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.UCase(V.Screen.F_Maintenance!txtCustDiv2.Text,V.Local.sCust)
+F.Intrinsic.Control.If(V.Local.sCust.Trim,!=,"")
+	F.Intrinsic.String.Build("select distinct CUSTOMER from CUSTOMER_MASTER where upper(CUSTOMER) = '{0}';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenCompanyConnection
+	F.ODBC.Connection!con.OpenRecordsetRO("rstCust",V.Local.sSQL)
+	F.Intrinsic.Control.if(V.ODBC.con!rstCust.EOF)
+		'No Cust found
+		F.Intrinsic.UI.Msgbox("Customer could not be found")
+		V.Local.sCust.Set("")
+		Gui.F_Maintenance.txtCustDiv2.SetFocus
+	F.Intrinsic.Control.Else
+		V.Local.sCust.Set(V.ODBC.con!rstCust.FieldValTrim!CUSTOMER)
+	F.Intrinsic.Control.EndIf
+	F.ODBC.con!rstCust.Close
+	F.ODBC.Connection!con.Close
+F.Intrinsic.Control.EndIf
+
+Gui.F_Maintenance.txtCustDiv2.Text(V.Local.sCust.Trim)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.txtCustDiv2_LostFocus.End
+
+Program.Sub.cmdCustCoBRW2_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.UI.Browser(205,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,0)
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	Gui.F_Maintenance.txtCustCo2.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustCoBRW2_Click.End
+
+Program.Sub.cmdCustDivBRW2_Click.Start
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.UI.Browser(205,,V.Local.sRet)
+F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+V.Local.sRet.RedimPreserve(0,0)
+F.Intrinsic.Control.If(V.Local.sRet.IsNotCancel)
+	Gui.F_Maintenance.txtCustDiv2.Text(V.Local.sRet.Trim)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustDivBRW2_Click.End
+
+Program.Sub.GetPreProcDTs.Start
+'Args: BegDate and EndDate
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.fBefore.Declare(Float)
+V.Local.fAfter.Declare(Float)
+V.Local.iChanges.Declare(Long)
+V.Local.iTemp.Declare(Long)
+V.Local.iTimeout.Declare(Long,100)
+F.Intrinsic.Control.Label("Timeout Reset")
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection(V.Local.iTimeout)
+F.Intrinsic.String.Build("select ORDER_NO, ORDER_LINE, year(CHG_DATE) as YEAR, month(CHG_DATE) as MONTH, day(CHG_DATE) as DAY, hour(CHG_TIME) as HOUR, minute(CHG_TIME) as MINUTE, second(CHG_TIME) as SECOND, CUSTOMER, TOTAL_DOLLARS, TOTAL_DOLLARS as ENDING_DOLLARS, PROD_LINE as PL, 'Added' as STATUS from V_ORDER_BOOKING where CHG_DATE between '{0}' and '{1}';",V.Args.BegDate.PervasiveDate,V.Args.EndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtBooking","con",V.Local.sSQL,True)
+F.Intrinsic.String.Build("select TERMINAL, SEQ, LINE_ID, LEFT_STRING, RIGHT_FLOAT from GCG_5328_BI_RPT where TERMINAL = '{0}' order by SEQ;",V.Caller.Terminal,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtGCG_5328_BI_RPT","con",V.Local.sSQL,True)
+F.Data.DataTable.DeleteRow("dtGCG_5328_BI_RPT")
+F.Intrinsic.String.Build("select ORDER_NO, ORDER_LINE, CUSTOMER, year(DATE_INVOICE) as YEAR, month(DATE_INVOICE) as MONTH, day(DATE_INVOICE) as DAY, EXTENSION from V_ORDER_HIST_LINE where DATE_INVOICE between '{0}' and '{1}';",V.Args.BegDate.PervasiveDate,V.Args.EndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtOrderHist","con",V.Local.sSQL,True)
+F.Data.DataTable.CreateFromSQL("dtGCG_5328_PL_TAGS","con","select TAG, BEG_PL, END_PL from GCG_5328_PL_TAGS order by BEG_PL, END_PL;",True)
+F.Data.DataTable.CreateFromSQL("dtGCG_5328_CO_CODES","con","select CUST1, CUST2 from GCG_5328_CO_CODES order by CUST1, CUST2;",True)
+F.Data.DataTable.CreateFromSQL("dtGCG_5328_DIV_CODES","con","select CUST1, CUST2 from GCG_5328_DIV_CODES order by CUST1, CUST2;",True)
+'NEED BOOKINGS FROM ORDER_CHANGES
+F.Intrinsic.String.Build("select ORDER_NO, RECORD_NO as ORDER_LINE, year(CHANGE_DATE) as YEAR, month(CHANGE_DATE) as MONTH, day(CHANGE_DATE) as DAY, hour(CHANGE_TIME) as HOUR, minute(CHANGE_TIME) as MINUTE, second(CHANGE_TIME) as SECOND, CUST_NO as CUSTOMER, BEFORE, AFTER, PROD_LINE as PL from V_ORDER_CHANGES where CHANGE_DATE between '{0}' and '{1}' and FIELD_NAME = 'Extended Amt';",V.Args.BegDate.PervasiveDate,V.Args.BegDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtOrderChanges","con",V.Local.sSQL)
+F.Intrinsic.String.Build("select ORDER_NO, ORDER_LINE, year(CHG_DATE) as YEAR, month (CHG_DATE) as MONTH, day(CHG_DATE) as DAY, hour(CHG_TIME) as HOUR, minute(CHG_TIME) as MINUTE, second(CHG_TIME) as  SECOND, CUSTOMER, TOTAL_DOLLARS * -1 as TOTAL_DOLLARS, cast(0 as numeric(12, 2)) as ENDING_DOLLARS, PROD_LINE as PL, 'Deleted' as STATUS from V_ORDER_DELETES where CHG_DATE between '{0}' and '{1}';",V.Args.BegDate.PervasiveDate,V.Args.EndDate.PervasiveDate,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtOrderDeletes","con",V.Local.sSQL)
+F.ODBC.Connection!con.Close
+
+F.Intrinsic.Control.For(V.Local.iChanges,0,V.DataTable.dtOrderChanges.RowCount--,1)
+	V.Local.sSQL.Set(V.DataTable.dtOrderChanges(V.Local.iChanges).AFTER!FieldValTrim)
+	F.Intrinsic.Control.If(V.Local.sSQL.Right1,=,"-")
+		'Negative so convert it to a negative number
+		V.Local.iTemp.Set(V.Local.sSQL.Length)
+		F.Intrinsic.String.Left(V.Local.sSQL,V.Local.iTemp.--,V.Local.sSQL)
+		F.Intrinsic.String.Build("-{0}",V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	V.Local.fAfter.Set(V.Local.sSQL.Float)
+	V.Local.sSQL.Set(V.DataTable.dtOrderChanges(V.Local.iChanges).BEFORE!FieldValTrim)
+	F.Intrinsic.Control.If(V.Local.sSQL.Right1,=,"-")
+		'Negative so convert it to a negative number
+		V.Local.iTemp.Set(V.Local.sSQL.Length)
+		F.Intrinsic.String.Left(V.Local.sSQL,V.Local.iTemp.--,V.Local.sSQL)
+		F.Intrinsic.String.Build("-{0}",V.Local.sSQL,V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+	V.Local.fBefore.Set(V.Local.sSQL.Float)
+	F.Intrinsic.Math.Sub(V.Local.fAfter,V.Local.fBefore,V.Local.fBefore)
+	F.Data.DataTable.AddRow("dtBooking","ORDER_NO",V.DataTable.dtOrderChanges(V.Local.iChanges).ORDER_NO!FieldVal,"ORDER_LINE",V.DataTable.dtOrderChanges(V.Local.iChanges).ORDER_LINE!FieldVal,"YEAR",V.DataTable.dtOrderChanges(V.Local.iChanges).YEAR!FieldVal,"MONTH",V.DataTable.dtOrderChanges(V.Local.iChanges).MONTH!FieldVal,"DAY",V.DataTable.dtOrderChanges(V.Local.iChanges).DAY!FieldVal,"HOUR",V.DataTable.dtOrderChanges(V.Local.iChanges).HOUR!FieldVal,"MINUTE",V.DataTable.dtOrderChanges(V.Local.iChanges).MINUTE!FieldVal,"SECOND",V.DataTable.dtOrderChanges(V.Local.iChanges).SECOND!FieldVal,"CUSTOMER",V.DataTable.dtOrderChanges(V.Local.iChanges).CUSTOMER!FieldVal,"TOTAL_DOLLARS",V.Local.fBefore,"ENDING_DOLLARS",V.Local.fAfter,"PL",V.DataTable.dtOrderChanges(V.Local.iChanges).PL!FieldVal,"STATUS","Change")
+F.Intrinsic.Control.Next(V.Local.iChanges)
+F.Intrinsic.Control.If(V.DataTable.dtOrderDeletes.RowCount,>,0)
+	F.Data.DataTable.Merge("dtOrderDeletes","dtBooking",True,3)
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Close("dtOrderChanges")
+F.Data.DataTable.Close("dtOrderDeletes")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,21025)
+		F.ODBC.Connection!con.Close
+		'Error is a timeout issue, increase timeout and try again
+		F.Intrinsic.Math.Add(V.Local.iTimeout,100,V.Local.iTimeout)
+		'Close out of DTs if they exist
+		F.Intrinsic.Control.If(V.DataTable.dtBooking.Exists)
+			F.Data.DataTable.Close("dtBooking")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_BI_RPT.Exists)
+			F.Data.DataTable.Close("dtGCG_5328_BI_RPT")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtOrderHist.Exists)
+			F.Data.DataTable.Close("dtOrderHist")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_PL_TAGS.Exists)
+			F.Data.DataTable.Close("dtGCG_5328_PL_TAGS")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_CO_CODES.Exists)
+			F.Data.DataTable.Close("dtGCG_5328_CO_CODES")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtGCG_5328_DIV_CODES.Exists)
+			F.Data.DataTable.Close("dtGCG_5328_DIV_CODES")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtOrderChanges.Exists)
+			F.Data.DataTable.Close("dtOrderChanges")
+		F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.If(V.DataTable.dtOrderDeletes.Exists)
+			F.Data.DataTable.Close("dtOrderDeletes")
+		F.Intrinsic.Control.EndIf
+		'Go to beginning of subroutine
+		F.Intrinsic.Control.GoTo("Timeout Reset")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.GetPreProcDTs.End
+
+Program.Sub.GetCustomerName.Start
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.iTimeout.Declare(Long,100)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.String.Build("select NAME_CUSTOMER from V_CUSTOMER_MASTER where CUSTOMER = '{0}';",V.Args.Customer,V.Local.sSQL)
+F.ODBC.Connection!con.OpenCompanyConnection(V.Local.iTimeout)
+F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSQL)
+F.ODBC.Connection!con.Close
+F.Intrinsic.Variable.AddRV("Customer_Name",V.Local.sSQL)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.Control.If(V.Ambient.ErrorNumber,=,21025)
+		F.ODBC.Connection!con.Close
+		'Error is a timeout issue, increase timeout and try again
+		F.Intrinsic.Math.Add(V.Local.iTimeout,100,V.Local.iTimeout)
+		'Go to beginning of subroutine
+		F.Intrinsic.Control.GoTo("Timeout Reset")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.GetCustomerName.End
